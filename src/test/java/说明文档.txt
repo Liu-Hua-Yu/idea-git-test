@@ -1,0 +1,22 @@
+问题1： Test1中的test1
+        要求显示，输入的内容为空
+
+
+
+// 2, 3 js问题
+问题2：打开test4.html
+
+
+问题3：完成下拉菜单的显示
+
+
+项目中的bug：启动项目Test
+
+    1：http://localhost:8989/spring_boot/department/hello
+    显示hello word
+
+
+
+    2： http://localhost:8989/spring_boot/department/selectAll
+    显示json串内容
+

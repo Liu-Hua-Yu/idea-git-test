@@ -1,0 +1,32 @@
+# 服务器 端口号，项目名
+server:
+  port: 8989
+  context-path: /spring_boot
+  #页面热部署
+  jsp-servlet:
+    init-parameters:
+      development: true
+
+
+# 数据源配置
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/user
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  # jsp
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  # 设置创建代理类 为cglib
+  aop:
+    proxy-target-class: true
+
+# mybatis配置
+mybatis:
+  type-aliases-package: com.lhy.entity
+  mapper-locations: classpath:com/mapper/*Mapper.xml
+

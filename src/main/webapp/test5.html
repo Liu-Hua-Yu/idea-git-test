@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+省份：
+<select id="province" name="province" onchange="test();">
+    <option id="begin">---选择省份---</option>
+    <option value="hb">河北省</option>
+    <option value="hn">河南省</option>
+    <option value="sd">山东省</option>
+    <option value="ah">安徽省</option>
+</select>
+市区：
+<select id="city" name="city" onchange="test1();">
+    <option value="">---选择市区---</option>
+</select>
+县区：
+<select id="county" name="county">
+    <option value="">---选择县区---</option>
+</select>
+</body>
+<script type="text/javascript">
+    provinces = {
+        'hb':['石家庄','邯郸','保定','张家口'],
+        'hn':['郑州', '焦作', '安阳', '洛阳'],
+        'sd':['济南', '青岛', '德州', '烟台'],
+        'an':['合肥', '芜湖', '淮南', '黄山']
+    };
+    citys = {
+        '石家庄': 	['石家庄一区', '石家庄二区', '石家庄三区', '石家庄四区'],
+        '邯郸':		['邯郸一区','邯郸二区', '邯郸三区','邯郸四区'],
+        '保定':		['保定一区', '保定二区','保定三区','保定四区'],
+        '张家口':		['张家口一区','张家口二区','张家口三区','张家口四区',],
+        '郑州':		['郑州一区','郑州二区','郑州三区','郑州四区'],
+        '焦作':		['焦作一区','焦作二区','焦作三区','焦作四区'],
+        '安阳':		['安阳一区','安阳二区','安阳三区','安阳四区'],
+        '洛阳':		['洛阳一区','洛阳二区','洛阳三区','洛阳四区'],
+        '济南':		['济南一区','济南二区','济南三区','济南四区'],
+        '青岛':		['洛阳一区','青岛二区','青岛三区','青岛四区'],
+        '德州':		['德州一区','德州二区','德州三区','德州四区'],
+        '烟台':		['烟台一区','烟台二区','烟台三区','烟台四区'],
+        '合肥':		['合肥一区','合肥二区','合肥三区','合肥四区'],
+        '芜湖':		['芜湖一区','芜湖二区','芜湖三区','芜湖四区'],
+        '淮南':		['淮南一区','淮南二区','淮南三区','淮南四区'],
+        '黄山':		['黄山一区','黄山二区','黄山三区','黄山四区']
+    };
+    function test(){
+        //得到选定省份下标
+        var province = document.getElementById("province").value;
+        //根据省份得到对应的市区
+        var citys = provinces[province];
+
+        //得到city select对象
+        var citySelect = document.getElementById("city");
+        //清空原来的下拉列表
+        //清空市区
+        var options = citySelect.options;
+        while(options.length >1 ){
+            citySelect.remove(1);
+        };
+        //清空县区
+        var counties = document.getElementById("county");
+        var options1 = counties.options;
+        while(options1.length >1 ){
+            counties.remove(1);
+        };
+        //插入新的下拉列表
+        for(index in citys){
+            var cityOption = new Option(citys[index]); //插入显示内容
+            cityOption.value = citys[index];		   //插入valu值
+            citySelect.appendChild(cityOption);
+        };
+    };
+
+    //根据市区插入县城
+    function test1(){
+        //得到选定市区下标
+        var city = document.getElementById("city").value;
+        //根据市区对应的县区
+        var countys = citys[city];
+        //县区的select对象
+        var selectCounty = document.getElementById("county");
+        //清空县区
+        var options1 = selectCounty.options;
+        while(options1.length >1 ){
+            selectCounty.remove(1);
+        };
+
+        for(index in countys){
+            var cityOption = new Option(countys[index]); //插入显示内容
+            cityOption.value = countys[index];		   //插入value值
+        };
+    }
+</script>
+</html>

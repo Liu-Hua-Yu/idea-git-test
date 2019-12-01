@@ -1,0 +1,40 @@
+问题1： Test1中的test1
+        要求显示，输入的内容为空
+
+        答案：if(thing.equals("")&& thing == null )
+
+问题2：Test1中的test2
+
+        答案：修改使除数不为0 int result = devide (2 , 0 ) ;
+
+问题3：Test1中的test3
+       要求输出 9
+       答案 ：arr[3]
+
+问题4：打开test.html
+    答案：js文件写在title标签中
+
+问题5：完成下拉菜单的显示
+    答案：
+
+    test1() {
+
+    for(index in countys){
+                var cityOption = new Option(countys[index]); //插入显示内容
+                cityOption.value = countys[index];		   //插入value值
+                selectCounty.appendChild(cityOption);   // 添加的数据
+            };
+    }
+
+
+项目中的bug：启动项目Test
+
+    1：http://localhost:8989/spring_boot/department/hello
+    显示hello word
+
+    答案：添加 @ResponseBody
+
+    2： http://localhost:8989/spring_boot/department/selectAll
+    显示json串内容
+
+    答案 ： application.yml 文件中修改mybatis配置的缩进
